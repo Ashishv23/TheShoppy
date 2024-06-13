@@ -1,19 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:padding="16dp">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- App Title -->
+        <TextView
+            android:id="@+id/appTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textSize="24sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Customer's Name -->
+        <EditText
+            android:id="@+id/customerName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_customer_name"
+            android:layout_marginTop="16dp"
+            android:minHeight="48dp"
+            android:importantForAutofill="yes"
+            android:autofillHints="name"/>
+
+        <!-- Province (AutoCompleteTextView) -->
+        <AutoCompleteTextView
+            android:id="@+id/province"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_province"
+            android:layout_marginTop="16dp"
+            android:minHeight="48dp"
+            android:textColor="#000000"
+            android:importantForAutofill="yes"
+            android:autofillHints="address-region"/>
+
+        <!-- Computer Type (RadioGroup with horizontal orientation) -->
+        <RadioGroup
+            android:id="@+id/computerType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
+
+            <RadioButton
+                android:id="@+id/desktop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/desktop"
+                android:minHeight="48dp"
+                android:minWidth="48dp"/>
+
+            <RadioButton
+                android:id="@+id/laptop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/laptop"
+                android:minHeight="48dp"
+                android:minWidth="48dp"/>
+        </RadioGroup>
+
+        <!-- Brand (Spinner) -->
+        <Spinner
+            android:id="@+id/brand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:minHeight="48dp"/>
+
+        <!-- SSD (CheckBox) -->
+        <CheckBox
+            android:id="@+id/ssd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ssd"
+            android:layout_marginTop="16dp"
+            android:minHeight="48dp"
+            android:minWidth="48dp"/>
+
+        <!-- Printer (CheckBox) -->
+        <CheckBox
+            android:id="@+id/printer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/printer"
+            android:layout_marginTop="16dp"
+            android:minHeight="48dp"
+            android:minWidth="48dp"/>
+
+        <!-- Laptop Peripherals (RadioGroup with vertical orientation) -->
+        <RadioGroup
+            android:id="@+id/laptopPeripherals"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp">
+
+            <RadioButton
+                android:id="@+id/coolingMat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cooling_mat"
+                android:minHeight="48dp"
+                android:minWidth="48dp"/>
+
+            <RadioButton
+                android:id="@+id/usbHub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/usb_c_hub"
+                android:minHeight="48dp"
+                android:minWidth="48dp"/>
+
+            <RadioButton
+                android:id="@+id/laptopStand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/laptop_stand"
+                android:minHeight="48dp"
+                android:minWidth="48dp"/>
+        </RadioGroup>
+
+        <!-- Desktop Peripherals (RadioGroup with vertical orientation) -->
+        <RadioGroup
+            android:id="@+id/desktopPeripherals"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp">
+
+            <RadioButton
+                android:id="@+id/none"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/none"
+                android:minHeight="48dp"
+                android:minWidth="48dp"/>
+
+            <RadioButton
+                android:id="@+id/webcam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/webcam"
+                android:minHeight="48dp"
+                android:minWidth="48dp"/>
+
+            <RadioButton
+                android:id="@+id/externalHardDrive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/external_hard_drive"
+                android:minHeight="48dp"
+                android:minWidth="48dp"/>
+        </RadioGroup>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,3 +1,28 @@
 <resources>
+    <!-- App Name -->
     <string name="app_name">TheShoppy</string>
+
+    <!-- EditText Hint -->
+    <string name="enter_customer_name">Enter Customer\'s Name</string>
+
+    <!-- AutoCompleteTextView Hint -->
+    <string name="enter_province">Enter Province</string>
+
+    <!-- RadioButtons Texts -->
+    <string name="desktop">Desktop</string>
+    <string name="laptop">Laptop</string>
+
+    <!-- CheckBox Texts -->
+    <string name="ssd">SSD</string>
+    <string name="printer">Printer</string>
+
+    <!-- Laptop Peripherals RadioButtons Texts -->
+    <string name="cooling_mat">Cooling Mat</string>
+    <string name="usb_c_hub">USB C-HUB</string>
+    <string name="laptop_stand">Laptop Stand</string>
+
+    <!-- Desktop Peripherals RadioButtons Texts -->
+    <string name="none">None</string>
+    <string name="webcam">Webcam</string>
+    <string name="external_hard_drive">External Hard Drive</string>
 </resources>
