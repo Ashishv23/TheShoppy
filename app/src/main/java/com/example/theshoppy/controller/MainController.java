@@ -32,6 +32,7 @@ public class MainController {
         // Clear previous error messages
         clearErrors();
 
+        // Check fields are not empty
         if (customerName.isEmpty()) {
             setError(view.getCustomerNameError(), "Name is required");
             valid = false;
@@ -52,7 +53,7 @@ public class MainController {
             valid = false;
         }
 
-        if (!hasSSD || !hasPrinter) {
+        if (!hasSSD && !hasPrinter) {
             setError(view.getAdditionFeaturesError(), "Please select additional feature.");
             valid = false;
         }
@@ -117,6 +118,7 @@ public class MainController {
         view.getInvoiceOutput().setText(invoiceText);
     }
 
+    // Clear errors function
     private void clearErrors() {
         setError(view.getCustomerNameError(), null);
         setError(view.getProvinceError(), null);
