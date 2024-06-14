@@ -1,6 +1,7 @@
 package com.example.theshoppy.view;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.theshoppy.R;
@@ -59,6 +60,35 @@ public class MainActivity extends AppCompatActivity {
                 R.array.brands, android.R.layout.simple_spinner_item);
         brandAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         brandSpinner.setAdapter(brandAdapter);
+
+        // Set initial visibility of peripherals
+        desktopPeripherals.setVisibility(View.GONE);
+        findViewById(R.id.desktopPeripheralsLabel).setVisibility(View.GONE);
+        findViewById(R.id.desktopPeripheralError).setVisibility(View.GONE);
+        laptopPeripherals.setVisibility(View.GONE);
+        findViewById(R.id.laptopPeripheralsLabel).setVisibility(View.GONE);
+        findViewById(R.id.laptopPeripheralError).setVisibility(View.GONE);
+
+        computerType.setOnCheckedChangeListener((group, checkedId) -> {
+            if (checkedId == R.id.laptop) {
+                laptopPeripherals.setVisibility(View.VISIBLE);
+                desktopPeripherals.setVisibility(View.GONE);
+                findViewById(R.id.laptopPeripheralsLabel).setVisibility(View.VISIBLE);
+                findViewById(R.id.laptopPeripheralError).setVisibility(View.VISIBLE);
+                findViewById(R.id.desktopPeripheralsLabel).setVisibility(View.GONE);
+                findViewById(R.id.desktopPeripheralError).setVisibility(View.GONE);
+            } else if (checkedId == R.id.desktop) {
+                laptopPeripherals.setVisibility(View.GONE);
+                desktopPeripherals.setVisibility(View.VISIBLE);
+                findViewById(R.id.desktopPeripheralsLabel).setVisibility(View.VISIBLE);
+                findViewById(R.id.desktopPeripheralError).setVisibility(View.VISIBLE);
+                findViewById(R.id.laptopPeripheralsLabel).setVisibility(View.GONE);
+                findViewById(R.id.laptopPeripheralError).setVisibility(View.GONE);
+            } else {
+                laptopPeripherals.setVisibility(View.GONE);
+                desktopPeripherals.setVisibility(View.GONE);
+            }
+        });
 
         // Set up Calculate button click listener
         calculateButton.setOnClickListener(v -> controller.calculateInvoice());

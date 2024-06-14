@@ -7,6 +7,7 @@ import com.example.theshoppy.R;
 import com.example.theshoppy.model.Computer;
 import com.example.theshoppy.model.Peripherals;
 import com.example.theshoppy.view.MainActivity;
+import java.util.Arrays;
 
 import java.text.DecimalFormat;
 
@@ -38,7 +39,7 @@ public class MainController {
             valid = false;
         }
 
-        if (province.isEmpty()) {
+        if (province.isEmpty() || !isValidProvince(province)) {
             setError(view.getProvinceError(), "Province is required");
             valid = false;
         }
@@ -58,14 +59,16 @@ public class MainController {
             valid = false;
         }
 
-        if (selectedLaptopPeripheralsId == -1) {
-            setError(view.getLaptopPeripheralsError(), "Please select a laptop peripherals.");
-            valid = false;
-        }
-
-        if (selectedDesktopPeripheralsId == -1) {
-            setError(view.getDesktopPeripheralsError(), "Please select a desktop peripherals.");
-            valid = false;
+        if (selectedComputerTypeId == R.id.laptop) {
+            if (selectedLaptopPeripheralsId == -1) {
+                setError(view.getLaptopPeripheralsError(), "Please select a laptop peripheral.");
+                valid = false;
+            }
+        } else if (selectedComputerTypeId == R.id.desktop) {
+            if (selectedDesktopPeripheralsId == -1) {
+                setError(view.getDesktopPeripheralsError(), "Please select a desktop peripheral.");
+                valid = false;
+            }
         }
 
         if (!valid) {
@@ -124,14 +127,20 @@ public class MainController {
         setError(view.getProvinceError(), null);
         setError(view.getComputerTypeError(), null);
         setError(view.getBrandError(), null);
-        setError(view.getAdditionFeaturesError(),null);
-        setError(view.getLaptopPeripheralsError(),null);
+        setError(view.getAdditionFeaturesError(), null);
+        setError(view.getLaptopPeripheralsError(), null);
         setError(view.getDesktopPeripheralsError(), null);
     }
 
     private void setError(TextView errorTextView, String errorMessage) {
         errorTextView.setText(errorMessage);
         errorTextView.setVisibility(errorMessage == null ? View.GONE : View.VISIBLE);
+    }
+
+    // Validate if the province is in the predefined list
+    private boolean isValidProvince(String province) {
+        String[] provinces = view.getResources().getStringArray(R.array.provinces);
+        return Arrays.asList(provinces).contains(province);
     }
 
     private double getLaptopPeripheralCost(int peripheralId, StringBuilder additionalCosts) {
