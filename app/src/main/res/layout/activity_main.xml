@@ -19,16 +19,41 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"/>
 
+        <!-- Label for Customer's Name -->
+        <TextView
+            android:id="@+id/customerNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/customerNameLabel"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"/>
+
         <!-- Customer's Name -->
         <EditText
             android:id="@+id/customerName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/enter_customer_name"
-            android:layout_marginTop="16dp"
             android:minHeight="48dp"
             android:importantForAutofill="yes"
             android:autofillHints="name"/>
+
+        <!-- Error for Customer's Name -->
+        <TextView
+            android:id="@+id/customerNameError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FF0000"
+            android:visibility="gone"/>
+
+        <!-- Label for Province -->
+        <TextView
+            android:id="@+id/provinceLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/provinceLabel"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"/>
 
         <!-- Province (AutoCompleteTextView) -->
         <AutoCompleteTextView
@@ -36,11 +61,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/enter_province"
-            android:layout_marginTop="16dp"
             android:minHeight="48dp"
             android:textColor="#000000"
             android:importantForAutofill="yes"
             android:autofillHints="address-region"/>
+
+        <!-- Error for Province -->
+        <TextView
+            android:id="@+id/provinceError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FF0000"
+            android:visibility="gone"/>
+
+        <!-- Label for Computer Type -->
+        <TextView
+            android:id="@+id/computerTypeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/computerTypeLabel"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"/>
 
         <!-- Computer Type (RadioGroup with horizontal orientation) -->
         <RadioGroup
@@ -48,7 +89,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="16dp">
+            android:layout_marginTop="8dp">
 
             <RadioButton
                 android:id="@+id/desktop"
@@ -67,13 +108,46 @@
                 android:minWidth="48dp"/>
         </RadioGroup>
 
+        <!-- Error for Computer Type -->
+        <TextView
+            android:id="@+id/computerTypeError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FF0000"
+            android:visibility="gone"/>
+
+        <!-- Label for Brand -->
+        <TextView
+            android:id="@+id/brandLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/brandLabel"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"/>
+
         <!-- Brand (Spinner) -->
         <Spinner
             android:id="@+id/brand"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:minHeight="48dp"/>
+
+        <!-- Error for Brand -->
+        <TextView
+            android:id="@+id/brandError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FF0000"
+            android:visibility="gone"/>
+
+        <!-- Label for Additional Features -->
+        <TextView
+            android:id="@+id/additionalFeaturesLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/additionalFeaturesLabel"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"/>
 
         <!-- SSD (CheckBox) -->
         <CheckBox
@@ -81,7 +155,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/ssd"
-            android:layout_marginTop="16dp"
             android:minHeight="48dp"
             android:minWidth="48dp"/>
 
@@ -91,9 +164,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/printer"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:minHeight="48dp"
             android:minWidth="48dp"/>
+
+        <!-- Label for Laptop Peripherals -->
+        <TextView
+            android:id="@+id/laptopPeripheralsLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/laptopPeripheralsLabel"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"/>
 
         <!-- Laptop Peripherals (RadioGroup with vertical orientation) -->
         <RadioGroup
@@ -101,7 +183,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="16dp">
+            android:layout_marginTop="8dp">
 
             <RadioButton
                 android:id="@+id/coolingMat"
@@ -128,13 +210,22 @@
                 android:minWidth="48dp"/>
         </RadioGroup>
 
+        <!-- Label for Desktop Peripherals -->
+        <TextView
+            android:id="@+id/desktopPeripheralsLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/laptopPeripheralsLabel"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"/>
+
         <!-- Desktop Peripherals (RadioGroup with vertical orientation) -->
         <RadioGroup
             android:id="@+id/desktopPeripherals"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="16dp">
+            android:layout_marginTop="8dp">
 
             <RadioButton
                 android:id="@+id/none"
@@ -161,6 +252,26 @@
                 android:minWidth="48dp"/>
         </RadioGroup>
 
-    </LinearLayout>
+        <!-- Calculate Button -->
+        <Button
+            android:id="@+id/calculateButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/calculateLabel"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:minHeight="48dp"
+            android:minWidth="48dp"/>
 
+        <!-- Invoice Output -->
+        <TextView
+            android:id="@+id/invoiceOutput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_marginTop="16dp"
+            android:minHeight="48dp"
+            android:padding="8dp"
+            android:background="#E0E0E0"/>
+    </LinearLayout>
 </ScrollView>

@@ -25,4 +25,36 @@
     <string name="none">None</string>
     <string name="webcam">Webcam</string>
     <string name="external_hard_drive">External Hard Drive</string>
+
+    <!-- Labels -->
+    <string name="desktopPeripheralsLabel">Desktop Peripherals:</string>
+    <string name="laptopPeripheralsLabel">Laptop Peripherals:</string>
+    <string name="additionalFeaturesLabel">Additional Features:</string>
+    <string name="brandLabel">Brand:</string>
+    <string name="computerTypeLabel">Computer Type:</string>
+    <string name="provinceLabel">Province:</string>
+    <string name="customerNameLabel">Customer Name:</string>
+    <string name="calculateLabel">Calculate</string>
+
+    <!-- Province Selection Texts -->
+    <string-array name="provinces">
+        <item>Ontario</item>
+        <item>Quebec</item>
+        <item>Nova Scotia</item>
+        <item>New Brunswick</item>
+        <item>Manitoba</item>
+        <item>British Columbia</item>
+        <item>Prince Edward Island</item>
+        <item>Saskatchewan</item>
+        <item>Alberta</item>
+        <item>Newfoundland and Labrador</item>
+    </string-array>
+
+    <!-- Brands Selection Texts-->
+    <string-array name="brands">
+        <item>Select a brand</item>
+        <item>Dell</item>
+        <item>HP</item>
+        <item>Lenova</item>
+    </string-array>
 </resources>
