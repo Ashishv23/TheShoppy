@@ -24,6 +24,8 @@ public class MainController {
         String brand = view.getBrandSpinner().getSelectedItem().toString();
         boolean hasSSD = view.getSsd().isChecked();
         boolean hasPrinter = view.getPrinter().isChecked();
+        int selectedLaptopPeripheralsId = view.getLaptopPeripherals().getCheckedRadioButtonId();
+        int selectedDesktopPeripheralsId = view.getDesktopPeripherals().getCheckedRadioButtonId();
 
         boolean valid = true;
 
@@ -47,6 +49,21 @@ public class MainController {
 
         if (brand.equals("Select a brand")) {
             setError(view.getBrandError(), "Please select a brand.");
+            valid = false;
+        }
+
+        if (!hasSSD || !hasPrinter) {
+            setError(view.getAdditionFeaturesError(), "Please select additional feature.");
+            valid = false;
+        }
+
+        if (selectedLaptopPeripheralsId == -1) {
+            setError(view.getLaptopPeripheralsError(), "Please select a laptop peripherals.");
+            valid = false;
+        }
+
+        if (selectedDesktopPeripheralsId == -1) {
+            setError(view.getDesktopPeripheralsError(), "Please select a desktop peripherals.");
             valid = false;
         }
 
@@ -88,7 +105,7 @@ public class MainController {
 
         // Create invoice text
         String invoiceText = String.format(
-                "Customer: %s\nProvince: %s\nComputer: %s\nBrand: %s\nAdditional: %s\nCost: $%s\nDUE ON: June 14, 2024",
+                "Customer: %s\nProvince: %s\nComputer: %s\nBrand: %s\nAdditional: %s\nCost: $%s",
                 customerName,
                 province,
                 type == Computer.Type.LAPTOP ? "Laptop" : "Desktop",
@@ -105,6 +122,9 @@ public class MainController {
         setError(view.getProvinceError(), null);
         setError(view.getComputerTypeError(), null);
         setError(view.getBrandError(), null);
+        setError(view.getAdditionFeaturesError(),null);
+        setError(view.getLaptopPeripheralsError(),null);
+        setError(view.getDesktopPeripheralsError(), null);
     }
 
     private void setError(TextView errorTextView, String errorMessage) {

@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private MainController controller;
 
     // Error TextViews
-    private TextView customerNameError, provinceError, computerTypeError, brandError;
+    private TextView customerNameError, provinceError, computerTypeError, brandError, additionalFeaturesError, laptopPeripheralsError, desktopPeripheralsError;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +42,9 @@ public class MainActivity extends AppCompatActivity {
         provinceError = findViewById(R.id.provinceError);
         computerTypeError = findViewById(R.id.computerTypeError);
         brandError = findViewById(R.id.brandError);
+        additionalFeaturesError = findViewById(R.id.additionalFeaturesError);
+        laptopPeripheralsError = findViewById(R.id.laptopPeripheralError);
+        desktopPeripheralsError = findViewById(R.id.desktopPeripheralError);
 
         // Initialize controller
         controller = new MainController(this);
@@ -111,5 +114,17 @@ public class MainActivity extends AppCompatActivity {
 
     public TextView getBrandError() {
         return brandError;
+    }
+
+    public  TextView getAdditionFeaturesError() {
+        return additionalFeaturesError;
+    }
+
+    public TextView getLaptopPeripheralsError() {
+        return laptopPeripheralsError;
+    }
+
+    public TextView getDesktopPeripheralsError() {
+        return desktopPeripheralsError;
     }
 }

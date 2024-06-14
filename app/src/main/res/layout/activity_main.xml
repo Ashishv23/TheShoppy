@@ -168,6 +168,14 @@
             android:minHeight="48dp"
             android:minWidth="48dp"/>
 
+        <!-- Error for Additional Features error -->
+        <TextView
+            android:id="@+id/additionalFeaturesError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FF0000"
+            android:visibility="gone"/>
+
         <!-- Label for Laptop Peripherals -->
         <TextView
             android:id="@+id/laptopPeripheralsLabel"
@@ -210,14 +218,22 @@
                 android:minWidth="48dp"/>
         </RadioGroup>
 
+        <!-- Error for Laptop peripherals -->
+        <TextView
+            android:id="@+id/laptopPeripheralError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FF0000"
+            android:visibility="gone"/>
+
         <!-- Label for Desktop Peripherals -->
         <TextView
             android:id="@+id/desktopPeripheralsLabel"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/laptopPeripheralsLabel"
-            android:textSize="16sp"
-            android:layout_marginTop="16dp"/>
+            android:layout_height="20dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/desktopPeripheralsLabel"
+            android:textSize="16sp" />
 
         <!-- Desktop Peripherals (RadioGroup with vertical orientation) -->
         <RadioGroup
@@ -251,6 +267,14 @@
                 android:minHeight="48dp"
                 android:minWidth="48dp"/>
         </RadioGroup>
+
+        <!-- Error for Desktop Peripherals -->
+        <TextView
+            android:id="@+id/desktopPeripheralError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FF0000"
+            android:visibility="gone"/>
 
         <!-- Calculate Button -->
         <Button
